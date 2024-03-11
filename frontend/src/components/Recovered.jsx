@@ -24,8 +24,8 @@ export default function Recovered() {
                 setOtp(opts);
                 if(res){
                     const response = await axios.post("http://localhost:3000/api/v1/send_recovery_email",{
-                        otp,
-                        email
+                        OTP: opts,
+                        email: email
                     })
                     setPage("otp")
                     

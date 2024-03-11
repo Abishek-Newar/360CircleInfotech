@@ -1,12 +1,15 @@
-import { TextInput } from "react-native"
+import { Alert, TextInput } from "react-native"
 import SafeAreaWrapper from "../../components/shared/safe-area-wrapper"
 import theme, { Box, Text } from "../../utils"
 import { Controller, useForm } from "react-hook-form"
 import Button from "../../components/button"
-import { useOtp } from "../../store/useUserGlobalStore"
+import { useEmail, useOtp } from "../../store/useUserGlobalStore"
+import { checkEmail, sendEmail } from "../../services/api"
+import { useNavigation } from "@react-navigation/native"
 
 
 const RecoveryEmail = () => {
+  const navigator = useNavigation();
   const {
     control,
     handleSubmit,
@@ -17,10 +20,32 @@ const RecoveryEmail = () => {
     },
   })
   const {setOtp} = useOtp() 
-  async function onClick(){
+  const {setEmail} = useEmail()
+  async function onClick(data){
+    const {email} = data
     const otps = Math.floor(Math.random()*9000) + 1000;
     console.log(otps)
-    
+    try{
+      const _email = await checkEmail({
+        email: email
+      })
+      if(_email){
+        const _sent = await sendEmail({
+          email: email,
+          OTP: otps,
+        })
+        
+      }
+      else{
+        Alert.alert("Email not found")
+      }
+      setOtp(otps)
+      setEmail(email)
+      navigator.navigate("otps")
+    } catch(e){
+      console.log(e);
+      Alert.alert("error sending mail")
+    }
   }
   
   return (
@@ -47,6 +72,7 @@ const RecoveryEmail = () => {
         value={value}
         placeholder='Recovery Email'
         onChangeText={onChange}
+        inputMode="email"
       />
       )}
           name="email"

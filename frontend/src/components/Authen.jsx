@@ -10,10 +10,15 @@ const Authen = ({type}) => {
         password: ""
     })
     async function handleSingin(){
-        console.log(inputs);
+        try{
+            console.log(inputs);
         const res = await axios.post(`http://localhost:3000/api/v1/user/${type}`,inputs)
         Cookies.set("token",res.data.token);
         navigate("/dashboard");
+        }
+        catch(e){
+            alert("Wrong credentials");
+        }
     }
   return (
     <div className='min-h-screen w-screen flex items-center justify-center '>

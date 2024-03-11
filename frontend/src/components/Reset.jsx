@@ -18,6 +18,7 @@ export default function Reset() {
     try{
       if(password === cpassword){
         const res = await axios.put("http://localhost:3000/api/v1/user/updatepassword",{email,password});
+        setPage("login");
         navigate("/dashboard")
       }else{
         alert("Password and confirm password doesn't match")

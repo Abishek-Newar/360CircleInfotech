@@ -37,5 +37,22 @@ export const useOtp = create(
 
   )
 )
+export const useEmail = create(
+  persist(
+    (set, get) => ({
+      email: null,
+      setEmail: (email) => {
+        set({
+          email,
+        })
+      }
+    }),
+    {
+      name: "otp-storage",
+      storage: createJSONStorage(()=>AsyncStorage)
+    }
+
+  )
+)
 
 export default useUserGlobalStore;

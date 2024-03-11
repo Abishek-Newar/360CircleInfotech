@@ -5,6 +5,9 @@ import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 
 const AddTodo = () => {
+  if(Cookies.get("token") === null){
+    navigate("signup");
+}
   const navigate = useNavigate();
     const [title,setTitle] = useState("");
     const [description,setDescription] = useState("");

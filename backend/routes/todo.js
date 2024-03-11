@@ -50,6 +50,29 @@ todoRouter.get("/bulk",authMiddleware, async(req,res)=>{
         return res.status(404).json({msg: "get error"})
     }
 })
+todoRouter.put("/updatetodo",authMiddleware, async(req,res)=>{
+    const body = req.body;
+    const success = todoValidate.safeParse(body);
+    if(!success){
+        return res.status(403).json("invalid inputs")
+    }
+    try{
+        const todos = await prisma.todo.update({
+            where:{
+                id: body.id
+            },
+            data: {
+                title: body.title,
+                description: body.description
+            }
+        })
+        return res.json({msg: "updated todo"})
+    }
+    catch(e){
+        console.log(e)
+        return res.status(403).json({msg: "erro updating todo"});
+    }
+})
 
 todoRouter.put("/update", authMiddleware, async(req,res)=>{
     const body = req.body;
