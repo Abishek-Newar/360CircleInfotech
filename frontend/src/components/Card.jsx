@@ -17,12 +17,28 @@ const Card = ({id,title,description,done}) => {
       if(res){
         alert ("todo deleted")
       }
-      window.relo
+      window.location.reload();
       
     }
     catch(e){
       alert("error while deleting")
     }
+  }
+  async function changeDone(id){
+    console.log(id);
+    const requestBody = { id };
+    try{
+      const res = await axios.put("http://localhost:3000/api/v1/todo/update",requestBody,{
+        headers: {
+          Authorization: `Bearer ${Cookies.get("token")}`
+        }
+    })
+      window.location.reload()
+    }
+    catch(e){
+      alert("error")
+    }
+    
   }
   return (
     <div className='w-[300px] h-auto min-h-[300px] border rounded-lg relative flex justify-center flex-col items-center p-6 '  >
@@ -31,7 +47,7 @@ const Card = ({id,title,description,done}) => {
         <FaRegTrashAlt onClick={()=>handleDelete(id)} className='right-1 text-red-600 cursor-pointer absolute top-1 ' />
         </div>
         <h1>{description}</h1>
-        <button className={`absolute bottom-6 border w-36 py-1 rounded-md ${done? "border-green-500 text-green-500": "border-red-500 text-red-500"}`}>{done? "Done" : "Not Done"}</button>
+        <button onClick={()=>changeDone(id)} className={`absolute bottom-6 border w-36 py-1 rounded-md ${done? "border-green-500 text-green-500": "border-red-500 text-red-500"}`}>{done? "Done" : "Not Done"}</button>
     </div>
   )
 }

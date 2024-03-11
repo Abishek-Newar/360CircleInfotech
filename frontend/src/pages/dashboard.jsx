@@ -20,12 +20,12 @@ const Dashboard = () => {
     },[])
   return (
     <div className='min-h-screen   bg-stone-100'>
-        <div className='h-20 relative flex items-center justify-center '>
+        <div className='h-20  flex items-center justify-center sticky top-0 bg-white shadow-md z-30'>
             <h1 className='text-2xl  font-bold'>Todos</h1>
             <button onClick={()=>navigate("/add")} className='absolute right-14 border px-3 py-1 bg-green-400 rounded-md  border-black'>ADD +</button>
         </div>
         
-        <div className=' flex flex-wrap gap-4 m-12'>
+        <div className=' flex flex-wrap gap-4 m-12 z-1'>
         {
             todos.map((item,index)=>(
                 <div key = {index}>

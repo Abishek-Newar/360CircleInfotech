@@ -57,7 +57,7 @@ todoRouter.put("/update", authMiddleware, async(req,res)=>{
     if(!success){
         return res.status(403).json({msg: "invalid inputs"})
     }
-
+    console.log(body);
     try{
         const todo = await prisma.todo.update({
             where: {
@@ -70,6 +70,7 @@ todoRouter.put("/update", authMiddleware, async(req,res)=>{
         return res.json({msg: "todo updated"})
     }
     catch(e){
+        console.log(e);
         return res.status(403).json({eror: "update error"})
     }
 
@@ -77,6 +78,7 @@ todoRouter.put("/update", authMiddleware, async(req,res)=>{
 
 todoRouter.delete("/delete",authMiddleware, async(req,res)=>{
     const body = req.body;
+    console.log(body)
     const success = todoValidate.safeParse(body);
     if(!success){
         return res.status(403).json({msg: "invalid inputs"})
