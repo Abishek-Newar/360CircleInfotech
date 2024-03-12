@@ -6,6 +6,6 @@ create todo, delete todo, mark as done
 ## TECH STACK
 ### Front ernd web: 
 | <img src="https://skillicons.dev/icons?i=react" width=48 /> | React |
------------------------------------------------------------------------
+|:-----------------------------------------------------------:|:-----:|
 https://skillicons.dev/icons?i=tailwindcss Tailwind
 ###Backend: 
