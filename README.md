@@ -7,12 +7,12 @@ create todo, delete todo, mark as done
 
 ## TECH STACK
 ### Front ernd web: 
-| <img src="https://skillicons.dev/icons?i=react" width=48 /> | React    |
-|:-----------------------------------------------------------:|:--------:|
-| <img src="https://skillicons.dev/icons?i=tailwind" width=48 | Tailwind |
+| <img src="https://skillicons.dev/icons?i=react" width=48 />    | React    |
+|:--------------------------------------------------------------:|:--------:|
+| <img src="https://skillicons.dev/icons?i=tailwind" width=48 /> | Tailwind |
 ---
 ###Backend: 
-| <img src="https://skillicons.dev/icons?i=nodejs" width=48 /> | Nodejs     |
-|:------------------------------------------------------------:|:----------:|
-| <img src="https://skillicons.dev/icons?i=postgres"  width=48 | PostgresQL |
+| <img src="https://skillicons.dev/icons?i=nodejs" width=48 />    | Nodejs     |
+|:---------------------------------------------------------------:|:----------:|
+| <img src="https://skillicons.dev/icons?i=postgres"  width=48 /> | PostgresQL |
 ---
