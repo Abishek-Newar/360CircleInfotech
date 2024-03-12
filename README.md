@@ -18,7 +18,7 @@ create todo, delete todo, mark as done
 | <img src="https://skillicons.dev/icons?i=prisma"    width=48 /> | Prisma     |
 ---
 ### FrontEnd Mobile: 
----
+|:---------------------------------------------------------- ---:|:--------:|
 | <img src="https://skillicons.dev/icons?i=react" width=48 />    | React    |
 ---
 
