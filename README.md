@@ -1,4 +1,4 @@
-#A FULL STACK TODO WEBSITE AND MOBILE APP
+# A FULL STACK TODO WEBSITE AND MOBILE APP
 it is a full stack mobile app and website
 ###FUNCTINALITIES
 user signup, login, forgot password
