@@ -5,7 +5,8 @@ user signup, login, forgot password
 create todo, delete todo, mark as done
 ## TECH STACK
 ### Front ernd web: 
-| <img src="https://skillicons.dev/icons?i=react" width=48 />    | React |
-|:--------------------------------------------------------------:|:-----:|
-| <img src="https://skillicons.dev/icons?i=tailwindcss" width=48 |       |
+| <img src="https://skillicons.dev/icons?i=react" width=48 /> | React |
+|:-----------------------------------------------------------:|:-----:|
+| <img src="https://skillicons.dev/icons?i=tailwind" width=48 |       |
+---
 ###Backend: 
